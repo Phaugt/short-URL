@@ -1,9 +1,11 @@
 from PyQt5 import uic
-from PyQt5.QtWidgets import (QApplication, QMainWindow,
-            QMessageBox, QLabel, qApp, QPushButton, QLineEdit, QMenuBar)
-from PyQt5.QtCore import (QFile, Qt)
-from PyQt5.QtGui import (QIcon, QPixmap)
-import pyshorteners, sys , os, pyperclip
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+import pyshorteners
+import sys
+import os
+import pyperclip
 
 try:
     from PyQt5.QtWinExtras import QtWin
@@ -42,8 +44,11 @@ class GUI(QMainWindow):
 
     def cmdCreateShortUrl(self):
         shorten = self.providedUrl.text()
-        result = self.URL.tinyurl.short(shorten)
-        self.urlOutput.setText(result)
+        try:
+            result = self.URL.tinyurl.short(shorten)
+            self.urlOutput.setText(result)
+        except Exception:
+            pass
 
     def cmdCopyLink(self):
         pyperclip.copy(self.urlOutput.text())
