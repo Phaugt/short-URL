@@ -7,7 +7,7 @@ import pyshorteners, sys , os, pyperclip
 
 try:
     from PyQt5.QtWinExtras import QtWin
-    myappid = 'password.generator.python.program'
+    myappid = 'shorten.url.python.program'
     QtWin.setCurrentProcessExplicitAppUserModelID(myappid)    
 except ImportError:
     pass

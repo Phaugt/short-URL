@@ -264,9 +264,6 @@
     <property name="text">
      <string/>
     </property>
-    <property name="pixmap">
-     <pixmap>bg.png</pixmap>
-    </property>
    </widget>
    <zorder>bg</zorder>
    <zorder>verticalLayoutWidget</zorder>
